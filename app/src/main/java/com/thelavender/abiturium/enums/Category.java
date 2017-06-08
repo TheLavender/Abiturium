@@ -1,4 +1,4 @@
-package com.thelavender.abiturium;
+package com.thelavender.abiturium.enums;
 
 public enum Category
 {

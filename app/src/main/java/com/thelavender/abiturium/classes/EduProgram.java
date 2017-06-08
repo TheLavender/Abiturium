@@ -1,4 +1,4 @@
-package com.thelavender.abiturium;
+package com.thelavender.abiturium.classes;
 
 
 import java.util.ArrayList;

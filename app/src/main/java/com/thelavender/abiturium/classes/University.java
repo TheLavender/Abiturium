@@ -1,23 +1,24 @@
-package com.thelavender.abiturium;
+package com.thelavender.abiturium.classes;
+
+
+import com.thelavender.abiturium.classes.Faculty;
 
 import java.util.ArrayList;
 
-public class Faculty
+public class University
 {
     public int ID;
-    public int UniID;
-
     public String name;
     public String about;
+    public ArrayList<Faculty> faculties;
     public ArrayList<String> links;
 
-    public ArrayList<EduProgram> eduprograms;
-
-    public Faculty()
+    public University()
     {
+        ID = 0;
         name = "The best Faculty";
         about = "The very best and super Faculty";
-        eduprograms = null;
+        faculties = null;
         links = null;
     }
 }

@@ -1,4 +1,6 @@
-package com.thelavender.abiturium;
+package com.thelavender.abiturium.classes;
+
+import com.thelavender.abiturium.enums.Subject;
 
 import java.util.ArrayList;
 
