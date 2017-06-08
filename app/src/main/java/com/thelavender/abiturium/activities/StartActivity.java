@@ -2,14 +2,12 @@ package com.thelavender.abiturium.activities;
 
 import android.content.Intent;
 import android.os.Handler;
-import android.os.HandlerThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
 
 import com.thelavender.abiturium.R;
 
-public class Start extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity {
 
     private Handler moveToApp = new Handler();
 
@@ -21,7 +19,7 @@ public class Start extends AppCompatActivity {
         moveToApp.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(Start.this, NavDrawerActivity.class);
+                Intent intent = new Intent(StartActivity.this, NavDrawerActivity.class);
                 startActivity(intent);
                 finish();
             }
