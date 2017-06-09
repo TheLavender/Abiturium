@@ -19,7 +19,7 @@ public class StartActivity extends AppCompatActivity {
         moveToApp.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(StartActivity.this, NavDrawerActivity.class);
+                Intent intent = new Intent(StartActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
