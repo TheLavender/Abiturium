@@ -1,23 +1,21 @@
 package com.thelavender.abiturium.classes;
 
-
 import java.util.ArrayList;
 
 public class EduProgram
 {
-    public int ID;
-    public int FacID;
-    public int UniID;
     public String name;
+    public String shortname;
     public String about;
     public ArrayList <String> links;
-    public ArrayList <Integer> olympIDs;
+    public ArrayList <Olympiad> olympiads;
 
     public EduProgram()
     {
-        name = "The best educational program";
-        about = "Very smart and good program";
-        links = null;
-        olympIDs = null;
+        name = "";
+        shortname = "";
+        about = "";
+        links = new ArrayList<String>();
+        olympiads = new ArrayList<Olympiad>();
     }
 }

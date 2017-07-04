@@ -1,19 +1,20 @@
 package com.thelavender.abiturium.classes;
 
 
+
+
 import com.thelavender.abiturium.enums.Category;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 
 public class OlympEvent
 {
-    public int ID;
-    public int OlyID;
-
     public Category cat;
     public String name;
     public String info;
+    public ArrayList <String> links;
 
     public boolean immediate = false;
     public Calendar begin;
@@ -21,4 +22,19 @@ public class OlympEvent
 
     public boolean hidden = false;
     public boolean done = false;
+
+    public OlympEvent()
+    {
+        cat = null;
+        name = "";
+        info = "";
+        links = new ArrayList<String>();
+        begin = null;
+        end = null;
+    }
+
+    public String toString()
+    {
+        return name;
+    }
 }

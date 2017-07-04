@@ -4,10 +4,8 @@ import java.util.ArrayList;
 
 public class Faculty
 {
-    public int ID;
-    public int UniID;
-
     public String name;
+    public String shortname;
     public String about;
     public ArrayList<String> links;
 
@@ -15,9 +13,10 @@ public class Faculty
 
     public Faculty()
     {
-        name = "The best Faculty";
-        about = "The very best and super Faculty";
-        eduprograms = null;
-        links = null;
+        name = "";
+        shortname = "";
+        about = "";
+        eduprograms = new ArrayList<EduProgram>();
+        links = new ArrayList<String>();
     }
 }
