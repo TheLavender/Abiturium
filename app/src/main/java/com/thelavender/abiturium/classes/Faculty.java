@@ -3,11 +3,15 @@ package com.thelavender.abiturium.classes;
 import java.util.ArrayList;
 
 public class Faculty {
-    public String name = "";
+
+    public University university = null;
+
     public String shortname = "";
+    public String name = "";
     public String about = "";
-    public ArrayList<EduProgram> eduPrograms = new ArrayList<>();
     public ArrayList<String> links = new ArrayList<>();
+
+    public ArrayList<EduProgram> eduPrograms = new ArrayList<>();
 
     public Faculty() {}
 

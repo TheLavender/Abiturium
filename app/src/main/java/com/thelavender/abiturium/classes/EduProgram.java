@@ -3,6 +3,9 @@ package com.thelavender.abiturium.classes;
 import java.util.ArrayList;
 
 public class EduProgram {
+
+    public Faculty faculty = null;
+
     public String name = "";
     public String shortname = "";
     public String info = "";

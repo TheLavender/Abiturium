@@ -7,6 +7,9 @@ import java.util.Calendar;
 
 
 public class OlympEvent {
+
+    public Olympiad olympiad = null;
+
     public Category cat = null;
     public String name = "";
     public String info = "";
