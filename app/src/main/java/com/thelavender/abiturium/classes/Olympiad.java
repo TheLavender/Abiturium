@@ -4,33 +4,66 @@ import com.thelavender.abiturium.enums.Subject;
 
 import java.util.ArrayList;
 
-public class Olympiad
-{
-    public String shortname;
-    public String name;
-    public String info;
-    public ArrayList<String> links;
+public class Olympiad {
+    public String name = "";
+    public String shortname = "";
+    public String info = "";
+    public ArrayList<String> links = new ArrayList<>();
 
+    public ArrayList<Subject> subjects = new ArrayList<>();
+    public String field = "";
 
-    public ArrayList<Subject> subjects;
-    public String field;
+    public ArrayList<OlympEvent> events = new ArrayList<>();
 
-    public ArrayList<OlympEvent> events;
+    public Olympiad() {}
 
-    public Olympiad()
-    {
-        shortname = "";
-        name = "";
-        info = "";
-        links = new ArrayList<String>();
-        subjects = new ArrayList<Subject>();
-        field = "";
-        events = new ArrayList<OlympEvent>();
+    public Olympiad(String shortname, String name, String info, ArrayList<String> links, ArrayList<Subject> subjects, String field, ArrayList<OlympEvent> events) {
+        this.name = name;
+        this.shortname = shortname;
+        this.info = info;
+        this.links = links;
+        this.subjects = subjects;
+        this.field = field;
+        this.events = events;
     }
 
-    public String toString()
-    {
-        return shortname;
+    public Olympiad(String shortname, String name, String info, ArrayList<Subject> subjects, String field, ArrayList<OlympEvent> events) {
+        this.name = name;
+        this.shortname = shortname;
+        this.info = info;
+        //this.links = links;
+        this.subjects = subjects;
+        this.field = field;
+        this.events = events;
     }
-    public boolean show;
+
+    public Olympiad(String shortname, String name, ArrayList<String> links, ArrayList<Subject> subjects, String field, ArrayList<OlympEvent> events) {
+        this.name = name;
+        this.shortname = shortname;
+        //this.info = info;
+        this.links = links;
+        this.subjects = subjects;
+        this.field = field;
+        this.events = events;
+    }
+
+    public Olympiad(String shortname, String name, ArrayList<Subject> subjects, String field, ArrayList<OlympEvent> events) {
+        this.name = name;
+        this.shortname = shortname;
+        //this.info = info;
+        //this.links = links;
+        this.subjects = subjects;
+        this.field = field;
+        this.events = events;
+    }
+
+    public Olympiad(String shortname, String name, ArrayList<Subject> subjects, ArrayList<OlympEvent> events) {
+        this.name = name;
+        this.shortname = shortname;
+        //this.info = info;
+        //this.links = links;
+        this.subjects = subjects;
+        //this.field = field;
+        this.events = events;
+    }
 }
