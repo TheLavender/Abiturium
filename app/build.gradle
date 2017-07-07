@@ -48,5 +48,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile files('lib/commons-io-2.5.jar')
     compile files('lib/db4o-8.0.276.16149-all-java5.jar')
-    compile files('lib/abiturium_util.jar')
+    compile files('lib/abiturium_utils.jar')
 }
