@@ -12,6 +12,7 @@ import com.db4o.config.BigMathSupport;
 import com.db4o.config.EmbeddedConfiguration;
 import com.db4o.query.Predicate;
 import com.thelavender.abiturium.R;
+import com.thelavender.abiturium.classes.Db4oHelper;
 import com.thelavender.abiturium_utils.classes.DataB;
 import com.thelavender.abiturium_utils.classes.EduProgram;
 import com.thelavender.abiturium_utils.classes.Faculty;
@@ -56,42 +57,19 @@ public class StartActivity extends AppCompatActivity {
     }
 
     void getDB() {
-        //Connecting to database and configuring it
-        EmbeddedConfiguration config = Db4oEmbedded.newConfiguration();
 
-        config.common().objectClass(DataB.class).cascadeOnActivate(true);
-        config.common().objectClass(University.class).cascadeOnActivate(true);
-        config.common().objectClass(Faculty.class).cascadeOnActivate(true);
-        config.common().objectClass(EduProgram.class).cascadeOnActivate(true);
-        config.common().objectClass(Olympiad.class).cascadeOnActivate(true);
-        config.common().objectClass(OlympEvent.class).cascadeOnActivate(true);
-        config.common().activationDepth(6);
-
-        config.common().objectClass(DataB.class).cascadeOnUpdate(true);
-        config.common().objectClass(University.class).cascadeOnUpdate(true);
-        config.common().objectClass(Faculty.class).cascadeOnUpdate(true);
-        config.common().objectClass(EduProgram.class).cascadeOnUpdate(true);
-        config.common().objectClass(Olympiad.class).cascadeOnUpdate(true);
-        config.common().objectClass(OlympEvent.class).cascadeOnUpdate(true);
-        config.common().updateDepth(6);
-
-        config.common().add(new AndroidSupport());
-        config.common().add(new BigMathSupport());
-
-        File file = new File(getFilesDir(), "/special.data");
-        try {
-            InputStream inputStream = getResources().openRawResource(getResources().getIdentifier("special", "raw", getPackageName()));
-            FileUtils.copyInputStreamToFile(inputStream, file);
-            inputStream.close();
-        } catch (IOException e) {
-            System.exit(0);
+        File dataFile = new File(getFilesDir() + "/" + "data.db4o");
+        if (!dataFile.exists())
+        {
+            if (!Db4oHelper.getCopyFromRaw("data", "data.db4o", this))
+            {
+                System.out.println("Something is wrong");
+            }
         }
 
-        ObjectContainer db4objects = Db4oEmbedded.openFile(config, getFilesDir() + "/special.data");
-
-        // Getting object from the database
-        DataB db = (DataB) db4objects.queryByExample(DataB.class).next();
-        db4objects.close();
+        Db4oHelper data = new Db4oHelper("data.db4o", this);
+        DataB db = data.db;
+        ObjectContainer db4objects = data.db4objects;
     }
 
     static String convertStreamToString(java.io.InputStream is) {
